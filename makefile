@@ -2,6 +2,7 @@ install:
 	-mkdir "/var/log/bhunter"
 	-mkdir "/etc/bhunter"
 	-install ./src/bhunter /usr/bin/
+	-install ./src/bhunter.service /etc/systemd/system/
 	-install ./default/defLogins.txt /etc/bhunter/defLogins.txt
 keygen:
 	-ssh-keygen -t rsa -f server.key
