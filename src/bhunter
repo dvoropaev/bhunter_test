@@ -147,7 +147,7 @@ def ui():
     def addMenu():
         addTarget(input("new target: "))
     while True:
-        print("1) Add target\\loginpair\n2)Show")
+        print("1) Add target\n1) Add loginpair\n")
         str = input()
         if(str == "1"):
             addTarget(input("new target: "))
