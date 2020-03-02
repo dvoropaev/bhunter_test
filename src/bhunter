@@ -106,7 +106,7 @@ def SSHCheck(target, SSHport, user, password):
     resultCode = 0
     print("SSHCheck: trying...")
     try:
-        ssh.connect(target, port = sshport, username = user, password = password, timeout=5, banner_timeout = 5, auth_timeout=5)
+        ssh.connect(target, port = SSHport, username = user, password = password, timeout=5, banner_timeout = 5, auth_timeout=5)
     except paramiko.AuthenticationException:
         resultCode = 1
     except socket.error:
