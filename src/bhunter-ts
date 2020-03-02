@@ -6,11 +6,10 @@ session = tmuxServer.new_session("contrSSH")
 window = session.attached_window
 window.split_window(vertical=False)
 window.panes[1].split_window(vertical=True)
-# window.panes[2].split_window(vertical=False)
-time.sleep(1)
 
-window.panes[0].send_keys("echo '0'")
-window.panes[1].send_keys("echo '1'")
-window.panes[2].send_keys("echo '2'")
+window.panes[0].send_keys("bhunter")
+time.sleep(1)
+window.panes[1].send_keys("tail -f /var/log/honeypot.log")
+window.panes[2].send_keys("tail -f /var/log/attack.log")
 
 #libtmux.Server().kill_session("contrSSH"
