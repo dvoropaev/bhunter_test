@@ -9,7 +9,7 @@ window.panes[1].split_window(vertical=True)
 
 window.panes[0].send_keys("bhunter")
 time.sleep(1)
-window.panes[1].send_keys("tail -f /var/log/honeypot.log")
-window.panes[2].send_keys("tail -f /var/log/attack.log")
+window.panes[1].send_keys("tail -f /var/log/bhunter/honeypot.log")
+window.panes[2].send_keys("tail -f /var/log/bhunter/attack.log")
 
 #libtmux.Server().kill_session("contrSSH"
