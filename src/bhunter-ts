@@ -9,9 +9,9 @@ window.panes[0].split_window(vertical=False)
 window.panes[2].split_window(vertical=False)
 time.sleep(1)
 
-window.panes[0].send_keys("echo '0'" +)
-window.panes[1].send_keys("echo '1'" +)
-window.panes[2].send_keys("echo '2'" +)
-window.panes[3].send_keys("echo '3'" +)
+window.panes[0].send_keys("echo '0'")
+window.panes[1].send_keys("echo '1'")
+window.panes[2].send_keys("echo '2'")
+window.panes[3].send_keys("echo '3'")
 
 #libtmux.Server().kill_session("contrSSH"
