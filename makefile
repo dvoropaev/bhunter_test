@@ -6,7 +6,8 @@ install:
 	-install ./src/bhunter.service /etc/systemd/system/
 	-install ./default/defLogins.txt /etc/bhunter/defLogins.txt
 keygen:
-	-ssh-keygen -t rsa -f server.key
+	# -ssh-keygen -t rsa -f server.key
+	-ssh-keygen -m PEM -f server.key
 	-mv ./server.key.pub /etc/bhunter/server.pub
 	-mv ./server.key /etc/bhunter/server.key
 # debian:
