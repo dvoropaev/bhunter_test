@@ -57,6 +57,7 @@ def SSHLoginsCollector(source, client_socket):
                 print(flag)
                 break
             if(flag):
+                print("add")
                 addLoginPair(username, password, 0)
             return paramiko.AUTH_FAILED
         def get_allowed_auths(self, username):
