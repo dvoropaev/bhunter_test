@@ -50,9 +50,12 @@ def SSHLoginsCollector(source, client_socket):
             logger(honeypotLog, "new login ({}, {}, {})".format(source[0], username, password))
             flag = 1
             for i in listOfLogins:
-                    if(i[1][0] == username and i[1][1] == password):
-                        flag = 0
-                    break
+                print("debug: " + username + " " + i[1][0])
+                print("debug: " + password + " " + i[1][1])
+                if(i[1][0] == username and i[1][1] == password):
+                    flag = 0
+                print(flag)
+                break
             if(flag):
                 addLoginPair(username, password, 0)
             return paramiko.AUTH_FAILED
@@ -100,11 +103,9 @@ def SSHhoneypot():
 #       2 - ошибка соккета при подключении
 #       3 - какая либо другая ошибка при подключении по SSH
 def SSHCheck(target, SSHport, user, password):
-    print("SSHCheck: " + target + " " + user + " " + password)
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     resultCode = 0
-    print("SSHCheck: trying...")
     try:
         ssh.connect(target, port = SSHport, username = user, password = password, timeout=5, banner_timeout = 5, auth_timeout=5)
     except paramiko.AuthenticationException:
@@ -115,7 +116,6 @@ def SSHCheck(target, SSHport, user, password):
         resultCode = 3
     finally:
         ssh.close()
-    print("SSHCheck: end")
     return resultCode
 
 def SSHAttacker():
