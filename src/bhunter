@@ -64,12 +64,9 @@ def SSHLoginsCollector(source, client_socket):
             for i in listOfLogins:
                 debug("current lp: ({}, {}), lp in list: ({}. {})".format(username, password, i[1][0], i[1][1]))
                 debug("result = {}".format(i[1][0] == username and i[1][1] == password))
-                print("debug: " + username + " " + i[1][0])
-                print("debug: " + password + " " + i[1][1])
                 if(i[1][0] == username and i[1][1] == password):
                     flag = 0
-                print(flag)
-                break
+                    break
             if(flag):
                 print("add")
                 addLoginPair(username, password, 0)
