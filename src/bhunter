@@ -190,7 +190,7 @@ def ui():
         str = input()
         if(str == "1"):
             for i in listOfLogins:
-                print("{} :: {}".format(i))
+                print("{} :: {}".format(i[1]))
         if(str == "2"):
             print("test test test")
     while True:
