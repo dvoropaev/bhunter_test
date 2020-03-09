@@ -189,7 +189,7 @@ def ui():
         print("1) Show loginPairs\n2) Show targets\n")
         str = input()
         if(str == "1"):
-            for i in loginPairs:
+            for i in listOfLogins:
                 print("{} :: {}".format(i))
         if(str == "2"):
             print("test test test")
