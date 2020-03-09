@@ -159,6 +159,11 @@ def cleaner():
         listOfLogins = listOfLogins[0, 100]
 
 def ui():
+    def bunner():
+        os.system("clear")
+        print("================")
+        print("BHUNER TEST")
+        print("================")
     def addMenu():
         print("1) Add target\n2) Add loginpair\n")
         str = input()
@@ -166,6 +171,7 @@ def ui():
             addTarget(input("new target: "))
         if(str == "2"):
             addLoginPair(input("new login: "), input("password: "), 0)
+        t = input()
     def importMenu():
         print("1) import loginPairs\n2) import targets\n")
         str = input()
@@ -173,6 +179,7 @@ def ui():
             print("test test test")
         if(str == "2"):
             print("test test test")
+        t = input()
     def exportMenu():
         print("1) Export loginpairs2) Export targets\n\n")
         if(str == "1"):
@@ -185,6 +192,7 @@ def ui():
             # filePath = input("filePath:")
             # for i in listOfLogins:
             #     addToFile(filePath, i[1][0] + " " + i[1][1] + "\n")
+        t = input()
     def showMenu():
         print("1) Show loginPairs\n2) Show targets\n")
         str = input()
@@ -193,8 +201,9 @@ def ui():
                 print("{} :: {}".format(i[1][0], i[1][1]))
         if(str == "2"):
             print("test test test")
+        t = input()
     while True:
-        # print(BANNER)
+        bunner()
         print("1) Add target/loginPair\n2) Import\n3) Export\n4) show\n")
         str = input()
         if(str == "1"):
