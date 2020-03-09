@@ -160,22 +160,51 @@ def cleaner():
 
 def ui():
     def addMenu():
-        addTarget(input("new target: "))
-    while True:
         print("1) Add target\n2) Add loginpair\n")
         str = input()
         if(str == "1"):
             addTarget(input("new target: "))
         if(str == "2"):
             addLoginPair(input("new login: "), input("password: "), 0)
+    def importMenu():
+        print("1) import loginPairs\n2) import targets\n")
+        str = input()
+        if(str == "1"):
+            print("test test test")
+        if(str == "2"):
+            print("test test test")
+    def exportMenu():
+        print("1) Export loginpairs2) Export targets\n\n")
+        if(str == "1"):
+            print("test test test")
+            # filePath = input("filePath:")
+            # for i in setOfCaptureTargets.keys():
+            #     addToFile(filePath, i + "\n")
+        if(str == "2"):
+            print("test test test")
+            # filePath = input("filePath:")
+            # for i in listOfLogins:
+            #     addToFile(filePath, i[1][0] + " " + i[1][1] + "\n")
+    def showMenu():
+        print("1) Show loginPairs\n2) Show targets\n")
+        str = input()
+        if(str == "1"):
+            for i in loginPairs:
+                print("{} :: {}".format(i))
+        if(str == "2"):
+            print("test test test")
+    while True:
+        # print(BANNER)
+        print("1) Add target/loginPair\n2) Import\n3) Export\n4) show\n")
+        str = input()
+        if(str == "1"):
+            addMenu()
+        if(str == "2"):
+            importMenu()
         if(str == "3"):
-            filePath = input("filePath:")
-            for i in setOfCaptureTargets.keys():
-                addToFile(filePath, i + "\n")
+            exportMenu()
         if(str == "4"):
-            filePath = input("filePath:")
-            for i in listOfLogins:
-                addToFile(filePath, i[1][0] + " " + i[1][1] + "\n")
+            showMenu()
 
 def main():
     logger(honeypotLog, "STARTING...")
